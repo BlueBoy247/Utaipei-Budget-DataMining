@@ -1,0 +1,3226 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>臺北市立大學校務發展基金 財務治理與預決算五年變革專案報告 (112–116年度) | 邱英浩校長任期特刊</title>
+
+  <!-- Chart.js: Local with CDN fallback -->
+  <script src="chart.umd.min.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js"><\/script>');
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       LUXURY INSTITUTIONAL DESIGN SYSTEM (APPLE / STRIPE / FT)
+       Prestigious, refined, breathable, flawless across all viewports.
+       ========================================================= */
+    :root,
+    [data-theme="light"] {
+      /* Paper Canvas */
+      --bg-page: #f9fafb;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #ffffff;
+      --bg-subtle: #f3f4f6;
+      --bg-muted: #e5e7eb;
+
+      /* Precision Hairline Borders */
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --border-medium: rgba(15, 23, 42, 0.14);
+      --border-gold: rgba(180, 83, 9, 0.25);
+
+      /* Typography: Ink Depth */
+      --text-main: #0b1528;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-caption: #94a3b8;
+
+      /* Prestige Palette: Oxford Blue, Heritage Gold, Audited Emerald, Deficit Carmine */
+      --brand-oxford: #0f2347;
+      --brand-primary: #1e3a8a;
+      --brand-primary-light: #eff6ff;
+      --brand-accent: #0284c7;
+      --brand-gold: #b45309;
+      --brand-gold-light: #fffbeb;
+
+      /* Semantic Indicators */
+      --fin-pos: #047857;
+      --fin-pos-bg: #ecfdf5;
+      --fin-pos-border: #a7f3d0;
+      --fin-neg: #b91c1c;
+      --fin-neg-bg: #fef2f2;
+      --fin-neg-border: #fecaca;
+      --fin-warn: #b45309;
+      --fin-warn-bg: #fffbeb;
+      --fin-warn-border: #fde68a;
+
+      /* Precision Layered Shadows */
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-card: 0 0 0 1px rgba(15, 23, 42, 0.06), 0 2px 8px -2px rgba(15, 23, 42, 0.04), 0 8px 24px -4px rgba(15, 23, 42, 0.03);
+      --shadow-card-hover: 0 0 0 1px rgba(30, 58, 138, 0.2), 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 16px 36px -6px rgba(15, 23, 42, 0.06);
+      --shadow-drawer: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+
+      --nav-glass: rgba(255, 255, 255, 0.92);
+      --table-header: #f8fafc;
+      --table-row-hover: #f8fafc;
+      --table-total: #eff6ff;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #080d1a;
+      --bg-surface: #0f172a;
+      --bg-surface-elevated: #162238;
+      --bg-subtle: #1e293b;
+      --bg-muted: #334155;
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.15);
+      --border-gold: rgba(245, 158, 11, 0.3);
+
+      --text-main: #f8fafc;
+      --text-body: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-caption: #64748b;
+
+      --brand-oxford: #1e293b;
+      --brand-primary: #3b82f6;
+      --brand-primary-light: rgba(59, 130, 246, 0.12);
+      --brand-accent: #38bdf8;
+      --brand-gold: #f59e0b;
+      --brand-gold-light: rgba(245, 158, 11, 0.12);
+
+      --fin-pos: #10b981;
+      --fin-pos-bg: rgba(16, 185, 129, 0.12);
+      --fin-pos-border: rgba(16, 185, 129, 0.25);
+      --fin-neg: #f43f5e;
+      --fin-neg-bg: rgba(244, 63, 94, 0.12);
+      --fin-neg-border: rgba(244, 63, 94, 0.25);
+      --fin-warn: #f59e0b;
+      --fin-warn-bg: rgba(245, 158, 11, 0.12);
+      --fin-warn-border: rgba(245, 158, 11, 0.25);
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-card: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 16px -2px rgba(0, 0, 0, 0.5);
+      --shadow-card-hover: 0 0 0 1px rgba(96, 165, 250, 0.35), 0 8px 28px -4px rgba(0, 0, 0, 0.6);
+      --shadow-drawer: 0 20px 48px -10px rgba(0, 0, 0, 0.7);
+
+      --nav-glass: rgba(8, 13, 26, 0.94);
+      --table-header: #131d33;
+      --table-row-hover: rgba(255, 255, 255, 0.02);
+      --table-total: rgba(37, 99, 235, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      line-height: 1.68;
+      letter-spacing: -0.012em;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+      background-image: radial-gradient(120% 80% at 50% -10%, rgba(30, 58, 138, 0.035) 0%, rgba(248, 250, 252, 0) 100%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 16px;
+      }
+    }
+
+    /* =========================================================
+       1. NAVIGATION: APPLE GLASS DOCK WITH SCROLLSPY
+       ========================================================= */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--nav-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.2s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      min-width: 0;
+      flex-shrink: 0;
+    }
+
+    .nav-brand-logo {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+      transition: transform 0.2s ease;
+    }
+
+    .nav-brand-logo:hover {
+      transform: scale(1.04);
+    }
+
+    .nav-brand-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-brand-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      white-space: nowrap;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .nav-brand-sub {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--brand-accent);
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+
+    /* Desktop Navigation Tabs */
+    .nav-chapters-bar {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 4px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+    }
+
+    .nav-chap-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .nav-chap-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-chap-link.active {
+      color: var(--brand-primary);
+      background: var(--bg-surface);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      font-weight: 700;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Luxury Segmented Currency Switcher */
+    .unit-pill-group {
+      display: flex;
+      align-items: center;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      padding: 3px;
+    }
+
+    .unit-pill-btn {
+      background: transparent;
+      border: none;
+      padding: 4px 11px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 9999px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .unit-pill-btn.active {
+      background: var(--bg-surface);
+      color: var(--brand-primary);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      font-weight: 700;
+    }
+
+    /* Theme Toggle */
+    .theme-icon-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .theme-icon-btn:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      transform: rotate(15deg);
+    }
+
+    /* Mobile Drawer Toggle */
+    .mobile-menu-btn {
+      display: none;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1120px) {
+      .nav-chapters-bar {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+    }
+
+    .mobile-nav-drawer {
+      display: none;
+      position: fixed;
+      top: 69px;
+      left: 0;
+      right: 0;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-drawer);
+      z-index: 999;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mobile-nav-drawer.open {
+      display: flex;
+    }
+
+    .mobile-nav-drawer a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .mobile-nav-drawer a:hover {
+      background: var(--bg-subtle);
+      color: var(--brand-primary);
+    }
+
+    /* =========================================================
+       2. HERO SECTION: MAJESTIC, CONFIDENT, INSTITUTIONAL
+       ========================================================= */
+    .hero-wrap {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .hero-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      color: var(--brand-gold);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin-bottom: 22px;
+      box-shadow: 0 1px 3px rgba(180, 83, 9, 0.08);
+    }
+
+    .hero-meta-badge .badge-gold-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-gold);
+    }
+
+    .hero-headline {
+      font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.18;
+      color: var(--text-main);
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+      max-width: 1080px;
+    }
+
+    .hero-lead-text {
+      font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+      color: var(--text-body);
+      line-height: 1.8;
+      max-width: 980px;
+      margin-bottom: 40px;
+    }
+
+    /* Governance Timeline Track */
+    .governance-timeline-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      background: var(--bg-surface);
+      border-radius: 16px;
+      padding: 24px 26px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    @media (max-width: 992px) {
+      .governance-timeline-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .governance-timeline-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline-step {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .timeline-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--brand-accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .timeline-step-title {
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      letter-spacing: -0.015em;
+    }
+
+    .timeline-step-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       3. METRICS CARDS: APPLE FINANCIAL LETTER GRADE
+       ========================================================= */
+    .metrics-dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 1200px) {
+      .metrics-dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .metrics-dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: var(--bg-surface);
+      border-radius: 16px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--brand-primary);
+      opacity: 0.9;
+    }
+
+    .metric-card.accent-green::before {
+      background: var(--fin-pos);
+    }
+
+    .metric-card.accent-gold::before {
+      background: var(--brand-gold);
+    }
+
+    .metric-card-header {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .metric-card-value {
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -0.035em;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.15;
+    }
+
+    .metric-card-value span.unit-text {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-left: 3px;
+    }
+
+    .metric-badge-delta {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-top: 12px;
+      width: fit-content;
+      letter-spacing: 0.02em;
+    }
+
+    .delta-green {
+      background: var(--fin-pos-bg);
+      color: var(--fin-pos);
+      border: 1px solid var(--fin-pos-border);
+    }
+
+    .delta-gold {
+      background: var(--fin-warn-bg);
+      color: var(--fin-warn);
+      border: 1px solid var(--fin-warn-border);
+    }
+
+    .metric-card-footer {
+      font-size: 0.72rem;
+      color: var(--text-caption);
+      margin-top: 10px;
+      line-height: 1.45;
+    }
+
+    /* =========================================================
+       4. EDITORIAL CHAPTER ARCHITECTURE
+       ========================================================= */
+    .content-chapter {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .chapter-heading-wrap {
+      margin-bottom: 36px;
+      max-width: 960px;
+    }
+
+    .chapter-eyebrow {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chapter-title {
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -0.035em;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .chapter-intro {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      line-height: 1.75;
+    }
+
+    /* Split Grids */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .grid-asym-col {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 28px;
+    }
+
+    @media (max-width: 960px) {
+
+      .grid-2col,
+      .grid-asym-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Luxury Card Containers */
+    .card-panel {
+      background: var(--bg-surface);
+      border-radius: 18px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-panel:hover {
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .card-panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .card-panel-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.025em;
+    }
+
+    .card-panel-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .card-tag {
+      background: var(--bg-subtle);
+      color: var(--brand-primary);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .canvas-container {
+      position: relative;
+      width: 100%;
+      height: 330px;
+    }
+
+    .canvas-tall {
+      height: 390px;
+    }
+
+    .card-panel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: var(--text-caption);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Narrative Dossier */
+    .narrative-item {
+      margin-bottom: 20px;
+    }
+
+    .narrative-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .narrative-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      letter-spacing: -0.015em;
+    }
+
+    .narrative-body {
+      font-size: 0.86rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    /* Clean Audited Variance Table */
+    .clean-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-top: 8px;
+    }
+
+    .clean-table th,
+    .clean-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .clean-table th {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .clean-table th.num,
+    .clean-table td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .num-positive {
+      color: var(--fin-pos);
+      font-weight: 800;
+    }
+
+    .num-saved {
+      color: var(--brand-primary);
+      font-weight: 800;
+    }
+
+    /* Capital Projects Specs & Progress */
+    .project-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: var(--bg-subtle);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 22px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    @media (max-width: 768px) {
+      .project-stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .project-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-stat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-stat-val {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-top: 3px;
+    }
+
+    /* Progress Bar */
+    .capex-progress-wrap {
+      background: var(--bg-subtle);
+      border-radius: 9999px;
+      height: 10px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .capex-progress-fill {
+      background: linear-gradient(90deg, #1e3a8a, #047857);
+      height: 100%;
+      width: 54.01%;
+      border-radius: 9999px;
+    }
+
+    /* Master Matrix Table */
+    .master-toolbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .matrix-tab-bar {
+      display: flex;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      padding: 3px;
+    }
+
+    .matrix-tab-btn {
+      background: transparent;
+      border: none;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 9999px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .matrix-tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--brand-primary);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      font-weight: 700;
+    }
+
+    .master-table-scroll {
+      background: var(--bg-surface);
+      border-radius: 16px;
+      overflow-x: auto;
+      box-shadow: var(--shadow-card);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .master-ledger-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .master-ledger-table th,
+    .master-ledger-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    .master-ledger-table th {
+      background: var(--table-header);
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    .master-ledger-table th.num,
+    .master-ledger-table td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .master-ledger-table tr.group-row {
+      background: var(--bg-subtle);
+      font-weight: 800;
+      color: var(--brand-primary);
+    }
+
+    .master-ledger-table tr.total-summary-row {
+      background: var(--table-total);
+      font-weight: 850;
+      color: var(--brand-primary);
+    }
+
+    .master-ledger-table tr:hover:not(.group-row):not(.total-summary-row) {
+      background: var(--table-row-hover);
+    }
+
+    /* Strategic Quadrant */
+    .strategic-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .strategic-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .strategic-grid-4 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .strategic-card {
+      background: var(--bg-surface);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .strategic-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .strategic-step-num {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--brand-gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .strategic-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .strategic-desc {
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       5. FOOTER & COPYRIGHT ATTRIBUTION
+       ========================================================= */
+    .site-footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 56px 0 36px;
+      margin-top: 56px;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand-lockup {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .footer-seal {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 5px;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .footer-meta-block {
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .footer-meta-heading {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .copyright-badge {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Back To Top Floating Action Button */
+    .back-to-top-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 900;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .back-to-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top-btn:hover {
+      transform: translateY(-2px);
+      color: var(--brand-primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       1. NAVIGATION: APPLE GLASS DOCK
+       ========================================================= -->
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-container">
+        <a href="#top" class="nav-brand">
+          <img src="school_seal.png"
+            onerror="this.onerror=null; this.src='school_seal_rgb.png'; this.onerror=function(){this.src='school_seal.jpg';};"
+            alt="臺北市立大學校徽" class="nav-brand-logo">
+          <div class="nav-brand-info">
+            <span class="nav-brand-title">臺北市立大學</span>
+            <span class="nav-brand-sub">校務發展基金 112–116 財務治理特刊</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links with Active ScrollSpy -->
+        <div class="nav-chapters-bar" id="desktopNav">
+          <a href="#summary" class="nav-chap-link active">總覽提要</a>
+          <a href="#budget-trends" class="nav-chap-link">預算擴張</a>
+          <a href="#budget-actual" class="nav-chap-link">預決對比</a>
+          <a href="#structure" class="nav-chap-link">結構轉型</a>
+          <a href="#deficit" class="nav-chap-link">短絀收斂</a>
+          <a href="#capex" class="nav-chap-link">宿舍基建</a>
+          <a href="#personnel" class="nav-chap-link">人力編制</a>
+          <a href="#matrix" class="nav-chap-link">全景矩陣</a>
+          <a href="#conclusion" class="nav-chap-link">治理展望</a>
+        </div>
+
+        <div class="nav-controls">
+          <!-- Currency Unit Selector -->
+          <div class="unit-pill-group">
+            <button class="unit-pill-btn active" onclick="setUnit('100M')">億元</button>
+            <button class="unit-pill-btn" onclick="setUnit('1M')">百萬</button>
+            <button class="unit-pill-btn" onclick="setUnit('1K')">千元</button>
+          </div>
+
+          <!-- Theme Button -->
+          <button class="theme-icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="切換深淺模式">
+            <span id="themeIconSvg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+
+          <!-- Mobile Hamburger Button -->
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()" title="展開選單">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Drawer -->
+    <div class="mobile-nav-drawer" id="mobileDrawer">
+      <a href="#summary" onclick="closeMobileMenu()">00 治理總覽提要</a>
+      <a href="#budget-trends" onclick="closeMobileMenu()">01 五年預算規模擴張</a>
+      <a href="#budget-actual" onclick="closeMobileMenu()">02 預算與決算審定對比</a>
+      <a href="#structure" onclick="closeMobileMenu()">03 收入結構與自籌款轉型</a>
+      <a href="#deficit" onclick="closeMobileMenu()">04 赤字減半與短絀收斂</a>
+      <a href="#capex" onclick="closeMobileMenu()">05 職能學院宿舍重大基建</a>
+      <a href="#personnel" onclick="closeMobileMenu()">06 人力編制與學生動態</a>
+      <a href="#matrix" onclick="closeMobileMenu()">07 歷年全景財務數據矩陣</a>
+      <a href="#conclusion" onclick="closeMobileMenu()">08 治校成效評估與展望</a>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       2. HERO SECTION
+       ========================================================= -->
+  <header class="hero-wrap" id="top">
+    <div class="container">
+      <div class="hero-meta-badge">
+        <span class="badge-gold-dot"></span>
+        高教財政治理研究白皮書 · 112–116 年度審定追蹤特刊
+      </div>
+      <h1 class="hero-headline">
+        臺北市立大學校務發展基金<br>財務治理與預決算五年變革專案報告
+      </h1>
+      <p class="hero-lead-text">
+        深度解構邱英浩校長自 2022 年 8 月（民國 111 年 8 月）上任以來，本校自 112 至 116 年度法定預算編列演進、112 至 114 年度審計決算執行成效，以及突破高教通膨與學雜費凍漲困局之自籌轉型實績。
+      </p>
+
+      <!-- Verified Timeline Flow -->
+      <div class="governance-timeline-bar" id="summary">
+        <div class="timeline-step">
+          <span class="timeline-step-badge">111.08 (2022/08)</span>
+          <div class="timeline-step-title">邱英浩校長宣誓就任</div>
+          <div class="timeline-step-desc">啟動校務基金體質重整，確立產學創收與爭取市政專案兩大治理主軸。</div>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-badge">112 年度 (2023)</span>
+          <div class="timeline-step-title">新任首編法定預算</div>
+          <div class="timeline-step-desc">業務收入編列 13.40 億；決算產學暴衝至 4.10 億，少虧損 8,363 萬元。</div>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-badge">113 年度 (2024)</span>
+          <div class="timeline-step-title">產學決算逼近 5 億</div>
+          <div class="timeline-step-desc">實質決算收入達 19.64 億；職能學院學生宿舍進入土建高峰，單年執行 2.18 億。</div>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-badge">114 年度 (2025)</span>
+          <div class="timeline-step-title">短絀腰斬至歷史低點</div>
+          <div class="timeline-step-desc">決算短絀大幅收斂至 -4,539 萬元，較 112 年減虧 52.8%，財政體質實質強韌。</div>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-badge">116 預算案 (2027)</span>
+          <div class="timeline-step-title">預算突破 20 億大關</div>
+          <div class="timeline-step-desc">業務收入預算案編列 20.09 億元；市府教學補助首度跨越 10 億元里程碑。</div>
+        </div>
+      </div>
+
+      <!-- 6 Metrics Strip -->
+      <div class="metrics-dashboard-grid">
+        <div class="metric-card">
+          <div class="metric-card-header">業務收入總預算</div>
+          <div class="metric-card-value">20.09<span class="unit-text">億元</span></div>
+          <div class="metric-badge-delta delta-green">▲ +49.94% 擴張</div>
+          <div class="metric-card-footer">112: 13.40億 → 116案 (CAGR 10.66%)</div>
+        </div>
+
+        <div class="metric-card accent-green">
+          <div class="metric-card-header">本期決算短絀改善</div>
+          <div class="metric-card-value">-4,539<span class="unit-text">萬元</span></div>
+          <div class="metric-badge-delta delta-green">▼ 減虧 52.77%</div>
+          <div class="metric-card-footer">112: -9,610萬 → 114: -4,539萬 (赤字腰斬)</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-card-header">建教合作預算增幅</div>
+          <div class="metric-card-value">4.63<span class="unit-text">億元</span></div>
+          <div class="metric-badge-delta delta-green">▲ +292.85%</div>
+          <div class="metric-card-footer">112: 1.18億 → 116: 4.63億 (決算連年近5億)</div>
+        </div>
+
+        <div class="metric-card accent-green">
+          <div class="metric-card-header">五項自籌款佔比</div>
+          <div class="metric-card-value">25.34<span class="unit-text">%</span></div>
+          <div class="metric-badge-delta delta-green">▲ +13.65%p</div>
+          <div class="metric-card-footer">自籌佔比由 11.69% 翻倍拉升至 25.34%</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-card-header">市府教學研究補助</div>
+          <div class="metric-card-value">10.17<span class="unit-text">億元</span></div>
+          <div class="metric-badge-delta delta-green">▲ +22.16%</div>
+          <div class="metric-card-footer">112: 8.32億 → 116案首度突破十億門檻</div>
+        </div>
+
+        <div class="metric-card accent-gold">
+          <div class="metric-card-header">職能學院宿舍累計執行</div>
+          <div class="metric-card-value">4.56<span class="unit-text">億元</span></div>
+          <div class="metric-badge-delta delta-gold">● 進度 54.01%</div>
+          <div class="metric-card-footer">總經費 8.44 億，三年累計完成逾半數工程</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       CHAPTER 01: 預算規模擴張
+       ========================================================= -->
+  <section class="content-chapter" id="budget-trends">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+          CHAPTER 01 / STATUTORY BUDGET EXPANSION
+        </span>
+        <h2 class="chapter-title">五年預算盤體重塑：突破 20 億元歷史大關</h2>
+        <p class="chapter-intro">
+          在少子化衝擊與高教經營成本上漲壓力下，本校業務收入總預算自 112 年度之 13.40 億元倍增至 116 年度案之 20.09 億元，年複合成長率（CAGR）高達 10.66%。
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Chart 1: Budget Totals -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">業務總收入 vs. 總成本預算演進</h3>
+              <p class="card-panel-sub">112～115 法定預算與 116 預算案整體規模</p>
+            </div>
+            <span class="card-tag">CAGR +10.66%</span>
+          </div>
+          <div class="canvas-container canvas-tall">
+            <canvas id="chartBudgetTotals"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>資料來源：臺北市立大學 112~115 法定預算書、116 預算案書</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+
+        <!-- Chart 2: Revenue Composition -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">業務收入五大來源堆疊結構</h3>
+              <p class="card-panel-sub">市府補助、學雜費、產學合作、其他補助與推廣教育消長</p>
+            </div>
+            <span class="card-tag">結構重整</span>
+          </div>
+          <div class="canvas-container canvas-tall">
+            <canvas id="chartRevenueStacked"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>資料來源：主計室官方審定之各年度預算來源表</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 02: 預算與決算審定對比
+       ========================================================= -->
+  <section class="content-chapter" id="budget-actual">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          CHAPTER 02 / AUDITED VARIANCE & EXECUTION
+        </span>
+        <h2 class="chapter-title">預算與決算深度對比：實質超額創收與行政撙節</h2>
+        <p class="chapter-intro">
+          檢視 112 至 114 三個完整結算年度，本校審定決算展現「業務收入連年超越預算 3.2 億～4.1 億元」與「管理總務費用三年節省 3,820 萬元」之精準執行成效。
+        </p>
+      </div>
+
+      <div class="grid-2col" style="margin-bottom: 28px;">
+        <!-- Chart 3: Revenue BvA -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">業務收入：法定預算 vs. 審定決算</h3>
+              <p class="card-panel-sub">決算連年超越預算，達成率達 119%～131%</p>
+            </div>
+            <span class="card-tag">超額達成</span>
+          </div>
+          <div class="canvas-container">
+            <canvas id="chartRevenueBvA"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>資料來源：112~114 決算書業務收入明細表</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+
+        <!-- Chart 4: Expense BvA -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">業務成本：法定預算 vs. 審定決算</h3>
+              <p class="card-panel-sub">成本擴張主要受產學專案實質執行之代收代付費用驅動</p>
+            </div>
+            <span class="card-tag">科研聯動支出</span>
+          </div>
+          <div class="canvas-container">
+            <canvas id="chartExpenseBvA"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>資料來源：112~114 決算書業務成本明細表</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Savings & Variance Table -->
+      <div class="grid-asym-col">
+        <!-- Chart 5: Admin Savings -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">管理及總務費用：嚴格行政撙節分析</h3>
+              <p class="card-panel-sub">連續三年決算支出均低於原編預算，落實公帑節約</p>
+            </div>
+            <span class="card-tag" style="color: var(--fin-pos);">累計省 3,820 萬</span>
+          </div>
+          <div class="canvas-container">
+            <canvas id="chartAdminSavings"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>112 年省下 931 萬 | 113 年省下 1,450 萬 | 114 年省下 1,439 萬</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+
+        <!-- Audited Variance Ledger -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">審計決算落差分析表</h3>
+              <p class="card-panel-sub">審定版決算與法定預算差額檢驗（千元 NTD）</p>
+            </div>
+          </div>
+
+          <table class="clean-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th class="num">112 年度</th>
+                <th class="num">113 年度</th>
+                <th class="num">114 年度</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>業務收入差額 (決-預)</td>
+                <td class="num num-positive">+412,479</td>
+                <td class="num num-positive">+401,607</td>
+                <td class="num num-positive">+321,991</td>
+              </tr>
+              <tr>
+                <td>業務成本差額 (決-預)</td>
+                <td class="num">+336,069</td>
+                <td class="num">+297,638</td>
+                <td class="num">+228,788</td>
+              </tr>
+              <tr>
+                <td>管總行政節約 (預-決)</td>
+                <td class="num num-saved">-9,310</td>
+                <td class="num num-saved">-14,502</td>
+                <td class="num num-saved">-14,390</td>
+              </tr>
+              <tr style="background: var(--bg-subtle);">
+                <td><strong>短絀改善度 (決少虧)</strong></td>
+                <td class="num num-positive"><strong>+83,627</strong></td>
+                <td class="num num-positive"><strong>+99,729</strong></td>
+                <td class="num num-positive"><strong>+109,251</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top: 18px;">
+            <div class="narrative-title">機制解構：科研創收與管理費提撥</div>
+            <p class="narrative-body">
+              產學收入雖伴隨對應的執行成本，但專案扣除直接研究支出後，依規提撥之行政管理費（Overhead）成為校務基金最重要的自主現金流，挹注全校教學設施設備更新與水電經常性開銷。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Execution Rates Bar -->
+      <div class="card-panel" style="margin-top: 28px;">
+        <div class="card-panel-header">
+          <div>
+            <h3 class="card-panel-title">各項核心收入決算達成率（執行率 %）</h3>
+            <p class="card-panel-sub">建教合作高達 152%～348%，市府補助 100% 精準撥付，學雜費穩定度 99.4%～100%</p>
+          </div>
+          <span class="card-tag">基準線 100%</span>
+        </div>
+        <div class="canvas-container" style="height: 260px;">
+          <canvas id="chartExecRates"></canvas>
+        </div>
+        <div class="card-panel-footer">
+          <span>計算公式：審定決算數 ÷ 原編法定預算數 × 100%</span>
+          <span>資料來源：臺北市立大學決算總說明書</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 03: 結構轉型與自籌款
+       ========================================================= -->
+  <section class="content-chapter" id="structure">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          CHAPTER 03 / STRUCTURAL TRANSFORMATION
+        </span>
+        <h2 class="chapter-title">收入結構巨變：學雜費凍漲稀釋與產學自籌引擎成型</h2>
+        <p class="chapter-intro">
+          公立大學健全治理的關鍵在於自籌自主能力。本校五項自籌款佔業務收入比重自 112 年度之 11.69% 翻倍拉升至 116 年度案之 25.34%，學雜費佔比則由 26.38% 稀釋降至 17.55%。
+        </p>
+      </div>
+
+      <div class="grid-asym-col">
+        <!-- Chart: Structure Shift -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">112 vs 116 業務收入結構佔比位移對比</h3>
+              <p class="card-panel-sub">學雜費佔比下降 8.83 百分點，建教合作大幅躍升 14.24 百分點</p>
+            </div>
+            <span class="card-tag">五年結構性位移</span>
+          </div>
+          <div class="canvas-container canvas-tall">
+            <canvas id="chartStructureShift"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>分析基礎：112 法定預算（13.40億）與 116 預算案（20.09億）</span>
+            <span>百分比（%）</span>
+          </div>
+        </div>
+
+        <!-- Cooperation Trend & Analysis -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">產學建教合作暴衝趨勢</h3>
+                <p class="card-panel-sub">預算倍增編列，決算連續三年逼近 5 億元大關</p>
+              </div>
+              <span class="card-tag">造血引擎</span>
+            </div>
+            <div class="canvas-container" style="height: 210px;">
+              <canvas id="chartCoopSurge"></canvas>
+            </div>
+            <div class="card-panel-footer">
+              <span>113 決算達 4.97 億元歷史新高 | 114 決算 4.80 億元</span>
+              <span>單位：<span class="unit-current-label">億元</span></span>
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3 class="card-panel-title">結構轉型背後的治理意涵</h3>
+            </div>
+            <div class="narrative-item">
+              <div class="narrative-title">1. 學雜費法定凍漲之「名目停滯、實質稀釋」</div>
+              <p class="narrative-body">
+                受政策管制，全校學雜費收入連續五年鎖死於 3.52～3.53 億元區間。在整體校務支出擴張下，學雜費佔比被自然稀釋，逼使校方必須向外開拓研發創收。
+              </p>
+            </div>
+            <div class="narrative-item">
+              <div class="narrative-title">2. 激勵機制鬆綁與市政研發連結深化</div>
+              <p class="narrative-body">
+                優化產學管理費回饋系所比例，全面爭取國科會、教育部及臺北市府局處委託案，使建教合作躍升為全校僅次於市府補助的第二大財源支柱。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 04: 短絀治理收斂與非營業收支
+       ========================================================= -->
+  <section class="content-chapter" id="deficit">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          CHAPTER 04 / FISCAL SUSTAINABILITY & DEFICIT SHRINKAGE
+        </span>
+        <h2 class="chapter-title">財務體質強韌化：決算赤字腰斬減虧 52.8%</h2>
+        <p class="chapter-intro">
+          在經常性人事調薪負擔加重背景下，本校審定決算本期淨短絀由 112 年度之 -9,610 萬元急遽收斂至 114 年度之 -4,539 萬元，赤字減幅超過五成，連年大幅優於原編法定預算。
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Chart: Deficit Shrink -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">本期短絀收斂軌跡：法定預算 vs. 審定決算</h3>
+              <p class="card-panel-sub">審定短絀大幅腰斬，每年實質結果均大幅優於預算案預估</p>
+            </div>
+            <span class="card-tag" style="color: var(--fin-pos);">減虧 52.77%</span>
+          </div>
+          <div class="canvas-container canvas-tall">
+            <canvas id="chartDeficitShrink"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>每年少虧損：112 少虧 8,363萬 | 113 少虧 9,973萬 | 114 少虧 1.09億</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+
+        <!-- Chart: Non-Operating Buffers -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">非營業收支結餘：穩健的安全防護網</h3>
+              <p class="card-panel-sub">利息收入、場地設備租金與投資收益年均貢獻 3,600萬～4,700萬元淨賸餘</p>
+            </div>
+            <span class="card-tag">財務緩衝</span>
+          </div>
+          <div class="canvas-container canvas-tall">
+            <canvas id="chartNonOp"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>非營業收入穩定維持 6,000萬～7,900萬元水準</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 05: 宿舍重大基建工程
+       ========================================================= -->
+  <section class="content-chapter" id="capex">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <path d="M9 22v-4h6v4"></path>
+            <path d="M8 6h.01"></path>
+            <path d="M16 6h.01"></path>
+            <path d="M12 6h.01"></path>
+          </svg>
+          CHAPTER 05 / MAJOR INFRASTRUCTURE CAPEX
+        </span>
+        <h2 class="chapter-title">重大資產基建：職能發展學院學生宿舍參建工程</h2>
+        <p class="chapter-intro">
+          為徹底解決天母與博愛兩校區學生宿舍床位供給瓶頸，校方積極推展職能學院學生宿舍參建案，總經費 8.44 億元，112 至 114 三年間累計實質資本支出達 4.56 億元（進度 54.01%）。
+        </p>
+      </div>
+
+      <!-- Project Spec Strip -->
+      <div class="project-stats-strip">
+        <div class="project-stat-item">
+          <span class="project-stat-label">工程專案名稱</span>
+          <span class="project-stat-val">職能學院北市大學生宿舍參建</span>
+        </div>
+        <div class="project-stat-item">
+          <span class="project-stat-label">工程總預算</span>
+          <span class="project-stat-val">844,000 千元（8.44 億）</span>
+        </div>
+        <div class="project-stat-item">
+          <span class="project-stat-label">112~114 累計執行</span>
+          <span class="project-stat-val" style="color: var(--fin-pos);">455,853 千元（4.56 億）</span>
+        </div>
+        <div class="project-stat-item">
+          <span class="project-stat-label">累計工程進度率</span>
+          <span class="project-stat-val">54.01%（如期推進）</span>
+        </div>
+      </div>
+
+      <!-- Progress Track -->
+      <div style="margin-bottom: 24px;">
+        <div
+          style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;">
+          <span>工程累積執行進度</span>
+          <span style="color: var(--brand-primary);">54.01% (4.56 億 / 8.44 億)</span>
+        </div>
+        <div class="capex-progress-wrap">
+          <div class="capex-progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="grid-asym-col">
+        <!-- CapEx Chart -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">各年度實質資本支出與保留款動態</h3>
+              <p class="card-panel-sub">113 年為主體工程施工高峰（單年執行 2.18 億），114 年保留 2.11 億賡續支應</p>
+            </div>
+            <span class="card-tag">公共工程執行力</span>
+          </div>
+          <div class="canvas-container">
+            <canvas id="chartDormCapEx"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>資料來源：112~114 決算書固定資產建設改良擴充明細表</span>
+            <span>單位：<span class="unit-current-label">億元</span></span>
+          </div>
+        </div>
+
+        <!-- CapEx Narrative -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <h3 class="card-panel-title">資本治理與長期綜效分析</h3>
+          </div>
+          <div class="narrative-item">
+            <div class="narrative-title">1. 跨年度保留款之制度化管控</div>
+            <p class="narrative-body">
+              重大公共工程受天候與發包工期影響，114 年依法將未結清款項 2.11 億元保留至 115 年度繼續執行，確保結構與機電裝修工程無縫接軌。
+            </p>
+          </div>
+          <div class="narrative-item">
+            <div class="narrative-title">2. 轉化為優質校園固定資產</div>
+            <p class="narrative-body">
+              工程支出全額轉化為固定資產與建物改良物。完工後不僅能顯著提升學生住宿滿意度，更能創造長期穩定之住宿費收益，強化校務自籌基礎。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 06: 人力編制調控與學生動態
+       ========================================================= -->
+  <section class="content-chapter" id="personnel">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          CHAPTER 06 / HUMAN CAPITAL STRATEGY
+        </span>
+        <h2 class="chapter-title">專任精簡與彈性專案人力：組織資本調控</h2>
+        <p class="chapter-intro">
+          在市府總員額控管政策下，學校專任職員維持精簡遇缺不補；與此同時，伴隨產學規模激增，約用專案研究人員規模跨越千人大關，展現高度彈性之人力調配策略。
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Formal Staff -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">專任職員預算員額 vs. 實際進用人數</h3>
+              <p class="card-panel-sub">預算編制 584～586 人，實際常態進用 515～530 人（精簡退撫支出）</p>
+            </div>
+            <span class="card-tag">人事控管</span>
+          </div>
+          <div class="canvas-container">
+            <canvas id="chartStaff"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>每年節省約 54～69 名編制缺額之人事經費支出</span>
+            <span>單位：人數（名）</span>
+          </div>
+        </div>
+
+        <!-- Temp Staff & Students -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">約用研發人力與學生規模穩定度</h3>
+              <p class="card-panel-sub">約用人員增至 1,033 人；學生在學總人數穩定維持 7,738～7,776 人</p>
+            </div>
+            <span class="card-tag">生源高穩定</span>
+          </div>
+          <div class="canvas-container">
+            <canvas id="chartStudents"></canvas>
+          </div>
+          <div class="card-panel-footer">
+            <span>學生人數決算實際值連續三年均超越原預估數（達成率 101%）</span>
+            <span>單位：人數（名）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 07: 全景財務數據矩陣
+       ========================================================= -->
+  <section class="content-chapter" id="matrix">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"></path>
+          </svg>
+          CHAPTER 07 / MASTER FINANCIAL LEDGER
+        </span>
+        <h2 class="chapter-title">歷年財務收支全景數據表（112–116 年度完整勾稽矩陣）</h2>
+        <p class="chapter-intro">
+          彙整 112 至 115 法定預算、116 預算案，以及 112 至 114 審定決算之完整收支數據。支援即時切換貨幣單位（億元 / 百萬元 / 千元）及三大對比視角。
+        </p>
+      </div>
+
+      <div class="master-toolbar-row">
+        <div class="matrix-tab-bar">
+          <button class="matrix-tab-btn active" onclick="switchYear('compare_all')">完整預決算對比 (112~114)</button>
+          <button class="matrix-tab-btn" onclick="switchYear('budget_trends')">五年預算趨勢 (112~116)</button>
+          <button class="matrix-tab-btn" onclick="switchYear('actual_exec')">決算執行率達成度 (112~114)</button>
+        </div>
+
+        <div style="font-size: 0.8rem; color: var(--text-muted);">
+          目前顯示單位：<strong style="color: var(--brand-primary);" id="currentUnitDisplay">億元 (新臺幣)</strong>
+        </div>
+      </div>
+
+      <div class="master-table-scroll">
+        <table class="master-ledger-table" id="masterTable">
+          <!-- Injected via JavaScript -->
+        </table>
+      </div>
+
+      <div
+        style="margin-top: 14px; font-size: 0.76rem; color: var(--text-caption); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+        <span>註：所有數據均由主計室官方 PDF 預算書及決算審定書抽取，四捨五入後彙整呈現。</span>
+        <span>資料探勘與系統工程：Antigravity</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CHAPTER 08: 治理總評與未來展望
+       ========================================================= -->
+  <section class="content-chapter" id="conclusion">
+    <div class="container">
+      <div class="chapter-heading-wrap">
+        <span class="chapter-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="M7 21h10"></path>
+            <path d="M12 3v18"></path>
+          </svg>
+          CHAPTER 08 / STRATEGIC EVALUATION
+        </span>
+        <h2 class="chapter-title">邱英浩校長任期財務治理總評：四大核心維度</h2>
+        <p class="chapter-intro">
+          綜合 112 至 116 年度實證數據，從財政規模、自主創收、短絀控制與重大基建四大維度，對臺北市立大學之校務治理成效進行客觀評定。
+        </p>
+      </div>
+
+      <div class="strategic-grid-4">
+        <div class="strategic-card">
+          <span class="strategic-step-num">DIMENSION 01</span>
+          <h3 class="strategic-title">財政盤體倍數擴展</h3>
+          <p class="strategic-desc">
+            預算規模由 112 年 13.40 億元拉升至 116 年 20.09 億元，年複合成長率達 10.66%。打破緊縮泥淖，成功跨越 20 億元歷史大關，為全校薪資調升與教學設備革新提供堅實底氣。
+          </p>
+        </div>
+
+        <div class="strategic-card">
+          <span class="strategic-step-num">DIMENSION 02</span>
+          <h3 class="strategic-title">產學自籌轉型成功</h3>
+          <p class="strategic-desc">
+            扭轉學費凍漲困境。建教合作實際決算連三年逼近 5 億元大關，五項自籌款佔比由 11.69% 翻倍拉升至 25.34%，象徵學校具備高度市場競爭力之自我造血與研發轉化機能。
+          </p>
+        </div>
+
+        <div class="strategic-card">
+          <span class="strategic-step-num">DIMENSION 03</span>
+          <h3 class="strategic-title">決算赤字腰斬減半</h3>
+          <p class="strategic-desc">
+            112 至 114 三年間，審計決算短絀由 -9,610 萬驟縮至 -4,539 萬元（減虧 52.8%）。透過管理總務行政費用每年省下千萬元級公帑，實質績效大幅優於市議會審定之原編預算。
+          </p>
+        </div>
+
+        <div class="strategic-card">
+          <span class="strategic-step-num">DIMENSION 04</span>
+          <h3 class="strategic-title">重大基建與永續挑戰</h3>
+          <p class="strategic-desc">
+            職能學院學生宿舍 8.44 億元工程三年內落實 4.56 億元實質進度。未來需持續面對退撫新制撥補提撥增加、校區建物折舊攤提，以及生源結構高齡少子化衝擊，持續深化財務韌性。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-lockup">
+          <img src="school_seal.png"
+            onerror="this.onerror=null; this.src='school_seal_rgb.png'; this.onerror=function(){this.src='school_seal.jpg';};"
+            alt="臺北市立大學校徽" class="footer-seal">
+          <div>
+            <div class="footer-brand-title">臺北市立大學 (University of Taipei)</div>
+            <div class="footer-brand-desc">
+              校務發展基金 (20503) 財務治理分析與五年預決算深度研究成果<br>
+              博愛校區：臺北市中正區愛國西路一號 | 天母校區：臺北市士林區忠誠路二段101號
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-meta-block">
+          <div class="footer-meta-heading">資料來源與稽核依據</div>
+          <div>本研究數據嚴格檢索並勾稽自臺北市立大學會計室官方公布之：</div>
+          <div style="color: var(--text-muted); margin-top: 4px;">
+            • 112、113、114、115 年度法定預算書<br>
+            • 116 年度校務基金預算案書<br>
+            • 112、113、114 年度審計處審定版決算書（含總說明與收支餘絀表）
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="copyright-badge">
+          Copyright © 2026 <strong>BlueBoy247</strong>. All rights reserved.
+        </div>
+        <div>
+          專題研究、資料探勘與視覺化系統工程：<strong>Antigravity</strong> (Google DeepMind)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    title="回到頂部">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- =========================================================
+       JAVASCRIPT: EMBEDDED DATA & CHARTS INITIALIZATION
+       ========================================================= -->
+  <script>
+    // Financial Dataset (Thousand NTD / 千元)
+    const rawData = {
+      years: [112, 113, 114, 115, 116],
+      budget: {
+        totalRevenue: [1339605, 1562432, 1684765, 1840882, 2008644],
+        tuition: [353353, 353350, 352622, 352707, 352523],
+        cooperation: [117730, 257400, 315000, 403000, 462500],
+        extension: [30000, 30000, 39223, 40534, 46534],
+        citySubsidy: [832240, 914229, 964465, 964465, 1016691],
+        otherSubsidy: [11200, 12646, 26872, 94474, 144073],
+        serviceExam: [19461, 19186, 10962, 10081, 10702],
+        selfGenerated5: [156637, 296307, 355423, 443534, 509034],
+
+        totalExpense: [1559266, 1770826, 1866177, 2003357, 2192626],
+        teachingResearch: [1207637, 1268680, 1294386, 1336543, 1448731],
+        cooperationCost: [117352, 257400, 315000, 403000, 462500],
+        extensionCost: [19640, 20908, 28146, 28791, 32991],
+        adminGeneral: [194911, 204204, 215311, 222210, 235236],
+        studentAid: [7572, 7572, 6066, 6066, 5906],
+        serviceCosts: [11810, 11706, 7268, 6747, 7262],
+
+        opSurplus: [-219661, -208394, -181412, -162475, -183982],
+        nonOpRevenue: [71110, 72376, 60332, 62971, 69562],
+        nonOpExpense: [31174, 31903, 33558, 30788, 30633],
+        nonOpSurplus: [39936, 40473, 26774, 32183, 38929],
+        netSurplus: [-179725, -167921, -154638, -130292, -145053]
+      },
+      actual: {
+        years: [112, 113, 114],
+        totalRevenue: [1752084, 1964039, 2006756],
+        tuition: [352146, 350233, 352879],
+        cooperation: [410101, 497156, 480242],
+        extension: [36171, 41805, 45255],
+        citySubsidy: [832240, 917725, 964465],
+        otherSubsidy: [132749, 169460, 176948],
+        serviceExam: [12963, 11801, 10420],
+        selfGenerated5: [449488, 540434, 525500],
+
+        totalExpense: [1895335, 2068464, 2094965],
+        teachingResearch: [1259498, 1343386, 1371393],
+        cooperationCost: [408095, 491217, 478973],
+        extensionCost: [25523, 29240, 32254],
+        adminGeneral: [185601, 189702, 200921],
+        studentAid: [6442, 5864, 4454],
+        serviceCosts: [10175, 9054, 6970],
+
+        opSurplus: [-143251, -104425, -88209],
+        nonOpRevenue: [79472, 64547, 73120],
+        nonOpExpense: [32319, 28314, 30297],
+        nonOpSurplus: [47153, 36233, 42822],
+        netSurplus: [-96098, -68192, -45387]
+      },
+      dormCapEx: {
+        years: [112, 113, 114],
+        budget: [41356, 156366, 307372],
+        actual: [52754, 217975, 185124],
+        carriedForward: [32661, 88722, 210970],
+        cumulativeActual: [52754, 270729, 455853]
+      },
+      staff: {
+        years: [112, 113, 114],
+        formalBudget: [586, 584, 584],
+        formalActual: [530, 523, 515],
+        tempStaff: [917, 1024, 1033],
+        outsourced: [59, 57, 64]
+      },
+      students: {
+        years: ['111下/112上', '112下/113上', '113下/114上'],
+        projected: [7696, 7674, 7661],
+        actual: [7772, 7776, 7738]
+      }
+    };
+
+    // Global State
+    let currentUnit = '100M'; // '100M' (億元), '1M' (百萬元), '1K' (千元)
+    let currentTab = 'compare_all';
+    let charts = {};
+
+    function isDarkTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+
+    function getChartThemeColors() {
+      const dark = isDarkTheme();
+      return {
+        text: dark ? '#94a3b8' : '#475569',
+        grid: dark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(15, 23, 42, 0.06)',
+        tooltipBg: dark ? 'rgba(15, 23, 42, 0.96)' : 'rgba(15, 23, 42, 0.94)',
+        tooltipBorder: dark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.2)'
+      };
+    }
+
+    // Gradient Generator for Charts
+    function createGradient(ctx, colorTop, colorBottom) {
+      const gradient = ctx.createLinearGradient(0, 0, 0, 320);
+      gradient.addColorStop(0, colorTop);
+      gradient.addColorStop(1, colorBottom);
+      return gradient;
+    }
+
+    // Pure Number Converter for Chart.js
+    function getNumericValue(thousandNTD, unit = currentUnit) {
+      if (thousandNTD === null || thousandNTD === undefined) return null;
+      const val = Number(thousandNTD);
+      if (unit === '100M') {
+        return Math.round((val / 100000) * 100) / 100;
+      } else if (unit === '1M') {
+        return Math.round((val / 1000) * 10) / 10;
+      } else {
+        return Math.round(val);
+      }
+    }
+
+    // Number & Currency Formatting for HTML Display & Tooltips
+    function formatValue(thousandNTD, unit = currentUnit, decimals = null) {
+      if (thousandNTD === null || thousandNTD === undefined) return '-';
+      const val = Number(thousandNTD);
+      if (unit === '100M') {
+        const in100M = val / 100000;
+        return in100M.toLocaleString('zh-TW', { minimumFractionDigits: decimals !== null ? decimals : 2, maximumFractionDigits: decimals !== null ? decimals : 2 });
+      } else if (unit === '1M') {
+        const in1M = val / 1000;
+        return in1M.toLocaleString('zh-TW', { minimumFractionDigits: decimals !== null ? decimals : 1, maximumFractionDigits: decimals !== null ? decimals : 1 });
+      } else {
+        return Math.round(val).toLocaleString('zh-TW');
+      }
+    }
+
+    function getUnitSuffix(unit = currentUnit) {
+      if (unit === '100M') return '億元';
+      if (unit === '1M') return '百萬元';
+      return '千元';
+    }
+
+    // Theme Switcher
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const target = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', target);
+
+      const iconSvg = document.getElementById('themeIconSvg');
+      if (target === 'dark') {
+        iconSvg.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+      } else {
+        iconSvg.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      }
+
+      destroyAllCharts();
+      initCharts();
+    }
+
+    // Mobile Drawer
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      drawer.classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      drawer.classList.remove('open');
+    }
+
+    function destroyAllCharts() {
+      Object.keys(charts).forEach(key => {
+        if (charts[key]) {
+          charts[key].destroy();
+        }
+      });
+      charts = {};
+    }
+
+    // =========================================================
+    // CHART.JS INITIALIZATION (LUXURY FINTECH STANDARDS)
+    // =========================================================
+    function initCharts() {
+      const colors = getChartThemeColors();
+      const unit = currentUnit;
+      const unitSuffix = getUnitSuffix(unit);
+
+      Chart.defaults.color = colors.text;
+      Chart.defaults.font.family = "'Inter', 'Noto Sans TC', sans-serif";
+
+      // Common Tooltip Styling
+      const commonTooltip = {
+        backgroundColor: colors.tooltipBg,
+        titleColor: '#ffffff',
+        bodyColor: '#f1f5f9',
+        borderColor: colors.tooltipBorder,
+        borderWidth: 1,
+        cornerRadius: 8,
+        padding: 12,
+        boxPadding: 6,
+        usePointStyle: true,
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('zh-TW')} ${unitSuffix}`
+        }
+      };
+
+      // 1. Chart: Budget Totals
+      const ctx1 = document.getElementById('chartBudgetTotals');
+      if (ctx1) {
+        const c1 = ctx1.getContext('2d');
+        const grad1 = createGradient(c1, 'rgba(30, 58, 138, 0.22)', 'rgba(30, 58, 138, 0.0)');
+        charts.budgetTotals = new Chart(ctx1, {
+          type: 'line',
+          data: {
+            labels: ['112年度', '113年度', '114年度', '115年度', '116年度案'],
+            datasets: [
+              {
+                label: '業務收入總預算',
+                data: rawData.budget.totalRevenue.map(v => getNumericValue(v, unit)),
+                borderColor: '#1e3a8a',
+                backgroundColor: grad1,
+                borderWidth: 3,
+                pointBackgroundColor: '#1e3a8a',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                fill: true,
+                tension: 0.3
+              },
+              {
+                label: '業務成本總預算',
+                data: rawData.budget.totalExpense.map(v => getNumericValue(v, unit)),
+                borderColor: '#b91c1c',
+                backgroundColor: 'transparent',
+                borderWidth: 2.4,
+                pointBackgroundColor: '#b91c1c',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                borderDash: [5, 4],
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                fill: false,
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top', labels: { boxWidth: 14, font: { weight: 600 } } },
+              tooltip: commonTooltip
+            },
+            scales: {
+              y: {
+                grid: { color: colors.grid, borderDash: [3, 3] },
+                ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix }
+              },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // 2. Chart: Stacked Revenue Composition
+      const ctx2 = document.getElementById('chartRevenueStacked');
+      if (ctx2) {
+        charts.revenueStacked = new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度', '115年度', '116年度案'],
+            datasets: [
+              {
+                label: '市府補助',
+                data: rawData.budget.citySubsidy.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#1e3a8a',
+                borderRadius: 4
+              },
+              {
+                label: '學雜費',
+                data: rawData.budget.tuition.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#0284c7',
+                borderRadius: 4
+              },
+              {
+                label: '建教合作',
+                data: rawData.budget.cooperation.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#047857',
+                borderRadius: 4
+              },
+              {
+                label: '其他補助',
+                data: rawData.budget.otherSubsidy.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#b45309',
+                borderRadius: 4
+              },
+              {
+                label: '推廣與其他',
+                data: rawData.budget.totalRevenue.map((tot, i) => {
+                  let sub = rawData.budget.citySubsidy[i] + rawData.budget.tuition[i] + rawData.budget.cooperation[i] + rawData.budget.otherSubsidy[i];
+                  return getNumericValue(Math.max(0, tot - sub), unit);
+                }),
+                backgroundColor: '#94a3b8',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top', labels: { boxWidth: 12 } },
+              tooltip: commonTooltip
+            },
+            scales: {
+              x: { stacked: true, grid: { display: false } },
+              y: {
+                stacked: true,
+                grid: { color: colors.grid, borderDash: [3, 3] },
+                ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix }
+              }
+            }
+          }
+        });
+      }
+
+      // 3. Chart: Revenue Budget vs Actual
+      const ctx3 = document.getElementById('chartRevenueBvA');
+      if (ctx3) {
+        charts.revenueBvA = new Chart(ctx3, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '法定預算',
+                data: [
+                  getNumericValue(rawData.budget.totalRevenue[0], unit),
+                  getNumericValue(rawData.budget.totalRevenue[1], unit),
+                  getNumericValue(rawData.budget.totalRevenue[2], unit)
+                ],
+                backgroundColor: '#94a3b8',
+                borderRadius: 6
+              },
+              {
+                label: '審定決算',
+                data: rawData.actual.totalRevenue.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#1e3a8a',
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: commonTooltip
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // 4. Chart: Expense Budget vs Actual
+      const ctx4 = document.getElementById('chartExpenseBvA');
+      if (ctx4) {
+        charts.expenseBvA = new Chart(ctx4, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '法定預算',
+                data: [
+                  getNumericValue(rawData.budget.totalExpense[0], unit),
+                  getNumericValue(rawData.budget.totalExpense[1], unit),
+                  getNumericValue(rawData.budget.totalExpense[2], unit)
+                ],
+                backgroundColor: '#cbd5e1',
+                borderRadius: 6
+              },
+              {
+                label: '審定決算',
+                data: rawData.actual.totalExpense.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#b91c1c',
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: commonTooltip
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // 5. Chart: Admin Savings
+      const ctx5 = document.getElementById('chartAdminSavings');
+      if (ctx5) {
+        charts.adminSavings = new Chart(ctx5, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '預算編列',
+                data: [
+                  getNumericValue(rawData.budget.adminGeneral[0], unit),
+                  getNumericValue(rawData.budget.adminGeneral[1], unit),
+                  getNumericValue(rawData.budget.adminGeneral[2], unit)
+                ],
+                backgroundColor: '#cbd5e1',
+                borderRadius: 6
+              },
+              {
+                label: '審定決算（節流）',
+                data: rawData.actual.adminGeneral.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#047857',
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: {
+                ...commonTooltip,
+                callbacks: {
+                  ...commonTooltip.callbacks,
+                  afterLabel: ctx => {
+                    const i = ctx.dataIndex;
+                    const diff = rawData.budget.adminGeneral[i] - rawData.actual.adminGeneral[i];
+                    return ` 節省公帑: ${formatValue(diff, unit)} ${unitSuffix}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Execution Rates Chart
+      const ctxExec = document.getElementById('chartExecRates');
+      if (ctxExec) {
+        charts.execRates = new Chart(ctxExec, {
+          type: 'bar',
+          data: {
+            labels: ['建教合作收入', '其他補助收入', '推廣教育收入', '市府教學補助', '學雜費收入'],
+            datasets: [
+              {
+                label: '112年度達成率',
+                data: [
+                  Number(((rawData.actual.cooperation[0] / rawData.budget.cooperation[0]) * 100).toFixed(1)),
+                  Number(((rawData.actual.otherSubsidy[0] / rawData.budget.otherSubsidy[0]) * 100).toFixed(1)),
+                  Number(((rawData.actual.extension[0] / rawData.budget.extension[0]) * 100).toFixed(1)),
+                  Number(((rawData.actual.citySubsidy[0] / rawData.budget.citySubsidy[0]) * 100).toFixed(1)),
+                  Number(((rawData.actual.tuition[0] / rawData.budget.tuition[0]) * 100).toFixed(1))
+                ],
+                backgroundColor: '#1e3a8a',
+                borderRadius: 5
+              },
+              {
+                label: '113年度達成率',
+                data: [
+                  Number(((rawData.actual.cooperation[1] / rawData.budget.cooperation[1]) * 100).toFixed(1)),
+                  Number(((rawData.actual.otherSubsidy[1] / rawData.budget.otherSubsidy[1]) * 100).toFixed(1)),
+                  Number(((rawData.actual.extension[1] / rawData.budget.extension[1]) * 100).toFixed(1)),
+                  Number(((rawData.actual.citySubsidy[1] / rawData.budget.citySubsidy[1]) * 100).toFixed(1)),
+                  Number(((rawData.actual.tuition[1] / rawData.budget.tuition[1]) * 100).toFixed(1))
+                ],
+                backgroundColor: '#0284c7',
+                borderRadius: 5
+              },
+              {
+                label: '114年度達成率',
+                data: [
+                  Number(((rawData.actual.cooperation[2] / rawData.budget.cooperation[2]) * 100).toFixed(1)),
+                  Number(((rawData.actual.otherSubsidy[2] / rawData.budget.otherSubsidy[2]) * 100).toFixed(1)),
+                  Number(((rawData.actual.extension[2] / rawData.budget.extension[2]) * 100).toFixed(1)),
+                  Number(((rawData.actual.citySubsidy[2] / rawData.budget.citySubsidy[2]) * 100).toFixed(1)),
+                  Number(((rawData.actual.tuition[2] / rawData.budget.tuition[2]) * 100).toFixed(1))
+                ],
+                backgroundColor: '#047857',
+                borderRadius: 5
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: {
+                ...commonTooltip,
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+                }
+              }
+            },
+            scales: {
+              y: {
+                grid: { color: colors.grid, borderDash: [3, 3] },
+                ticks: { callback: v => v + '%' }
+              },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Structure Shift
+      const ctxShift = document.getElementById('chartStructureShift');
+      if (ctxShift) {
+        charts.structureShift = new Chart(ctxShift, {
+          type: 'bar',
+          data: {
+            labels: ['市府補助', '學雜費', '建教合作', '其他補助', '推廣與其他'],
+            datasets: [
+              {
+                label: '112 法定預算佔比 (%)',
+                data: [
+                  Number(((rawData.budget.citySubsidy[0] / rawData.budget.totalRevenue[0]) * 100).toFixed(2)),
+                  Number(((rawData.budget.tuition[0] / rawData.budget.totalRevenue[0]) * 100).toFixed(2)),
+                  Number(((rawData.budget.cooperation[0] / rawData.budget.totalRevenue[0]) * 100).toFixed(2)),
+                  Number(((rawData.budget.otherSubsidy[0] / rawData.budget.totalRevenue[0]) * 100).toFixed(2)),
+                  Number((100 - ((rawData.budget.citySubsidy[0] + rawData.budget.tuition[0] + rawData.budget.cooperation[0] + rawData.budget.otherSubsidy[0]) / rawData.budget.totalRevenue[0]) * 100).toFixed(2))
+                ],
+                backgroundColor: '#cbd5e1',
+                borderRadius: 5
+              },
+              {
+                label: '116 預算案佔比 (%)',
+                data: [
+                  Number(((rawData.budget.citySubsidy[4] / rawData.budget.totalRevenue[4]) * 100).toFixed(2)),
+                  Number(((rawData.budget.tuition[4] / rawData.budget.totalRevenue[4]) * 100).toFixed(2)),
+                  Number(((rawData.budget.cooperation[4] / rawData.budget.totalRevenue[4]) * 100).toFixed(2)),
+                  Number(((rawData.budget.otherSubsidy[4] / rawData.budget.totalRevenue[4]) * 100).toFixed(2)),
+                  Number((100 - ((rawData.budget.citySubsidy[4] + rawData.budget.tuition[4] + rawData.budget.cooperation[4] + rawData.budget.otherSubsidy[4]) / rawData.budget.totalRevenue[4]) * 100).toFixed(2))
+                ],
+                backgroundColor: '#1e3a8a',
+                borderRadius: 5
+              }
+            ]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: {
+                ...commonTooltip,
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+                }
+              }
+            },
+            scales: {
+              x: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => v + '%' } },
+              y: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Cooperation Surge
+      const ctx6 = document.getElementById('chartCoopSurge');
+      if (ctx6) {
+        const c6 = ctx6.getContext('2d');
+        const grad6 = createGradient(c6, 'rgba(4, 120, 87, 0.25)', 'rgba(4, 120, 87, 0.0)');
+        charts.coopSurge = new Chart(ctx6, {
+          type: 'line',
+          data: {
+            labels: ['112年度', '113年度', '114年度', '115年度', '116年度案'],
+            datasets: [
+              {
+                label: '建教合作法定預算',
+                data: rawData.budget.cooperation.map(v => getNumericValue(v, unit)),
+                borderColor: '#94a3b8',
+                backgroundColor: 'transparent',
+                borderDash: [5, 4],
+                pointRadius: 4
+              },
+              {
+                label: '建教合作審定決算',
+                data: [
+                  getNumericValue(rawData.actual.cooperation[0], unit),
+                  getNumericValue(rawData.actual.cooperation[1], unit),
+                  getNumericValue(rawData.actual.cooperation[2], unit),
+                  null,
+                  null
+                ],
+                borderColor: '#047857',
+                backgroundColor: grad6,
+                borderWidth: 3,
+                pointRadius: 5.5,
+                pointBackgroundColor: '#047857',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                fill: true,
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: commonTooltip
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Deficit Shrink
+      const ctx7 = document.getElementById('chartDeficitShrink');
+      if (ctx7) {
+        charts.deficitShrink = new Chart(ctx7, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '原編法定短絀 (預算)',
+                data: [
+                  getNumericValue(rawData.budget.netSurplus[0], unit),
+                  getNumericValue(rawData.budget.netSurplus[1], unit),
+                  getNumericValue(rawData.budget.netSurplus[2], unit)
+                ],
+                backgroundColor: '#fca5a5',
+                borderRadius: 6
+              },
+              {
+                label: '審定實質短絀 (決算)',
+                data: rawData.actual.netSurplus.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#b91c1c',
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: {
+                ...commonTooltip,
+                callbacks: {
+                  ...commonTooltip.callbacks,
+                  afterLabel: ctx => {
+                    const i = ctx.dataIndex;
+                    const diff = rawData.actual.netSurplus[i] - rawData.budget.netSurplus[i];
+                    return ` 少虧損: +${formatValue(diff, unit)} ${unitSuffix}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Non-Op Chart
+      const ctx8 = document.getElementById('chartNonOp');
+      if (ctx8) {
+        const c8 = ctx8.getContext('2d');
+        const grad8 = createGradient(c8, 'rgba(4, 120, 87, 0.22)', 'rgba(4, 120, 87, 0.0)');
+        charts.nonOp = new Chart(ctx8, {
+          type: 'line',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '非營業收入決算',
+                data: rawData.actual.nonOpRevenue.map(v => getNumericValue(v, unit)),
+                borderColor: '#1e3a8a',
+                pointBackgroundColor: '#1e3a8a',
+                borderWidth: 2.2,
+                pointRadius: 4.5
+              },
+              {
+                label: '非營業費用決算',
+                data: rawData.actual.nonOpExpense.map(v => getNumericValue(v, unit)),
+                borderColor: '#94a3b8',
+                borderDash: [4, 4],
+                pointRadius: 4
+              },
+              {
+                label: '非營業淨利益 (賸餘)',
+                data: rawData.actual.nonOpSurplus.map(v => getNumericValue(v, unit)),
+                borderColor: '#047857',
+                backgroundColor: grad8,
+                borderWidth: 2.8,
+                fill: true,
+                pointRadius: 5,
+                pointBackgroundColor: '#047857',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: commonTooltip
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Dorm CapEx
+      const ctx9 = document.getElementById('chartDormCapEx');
+      if (ctx9) {
+        charts.dormCapEx = new Chart(ctx9, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                type: 'bar',
+                label: '年度審定實質支出',
+                data: rawData.dormCapEx.actual.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#1e3a8a',
+                borderRadius: 6
+              },
+              {
+                type: 'bar',
+                label: '保留至下年度經費',
+                data: rawData.dormCapEx.carriedForward.map(v => getNumericValue(v, unit)),
+                backgroundColor: '#b45309',
+                borderRadius: 6
+              },
+              {
+                type: 'line',
+                label: '累計已執行金額',
+                data: rawData.dormCapEx.cumulativeActual.map(v => getNumericValue(v, unit)),
+                borderColor: '#047857',
+                borderWidth: 3,
+                pointRadius: 5.5,
+                pointBackgroundColor: '#047857',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                fill: false,
+                tension: 0.25
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: commonTooltip
+            },
+            scales: {
+              y: { grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => Number(v).toLocaleString('zh-TW') + ' ' + unitSuffix } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Staff Chart
+      const ctx10 = document.getElementById('chartStaff');
+      if (ctx10) {
+        charts.staff = new Chart(ctx10, {
+          type: 'bar',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '預算員額 (編制上限)',
+                data: rawData.staff.formalBudget,
+                backgroundColor: '#cbd5e1',
+                borderRadius: 6
+              },
+              {
+                label: '實際進用專任人數',
+                data: rawData.staff.formalActual,
+                backgroundColor: '#1e3a8a',
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: {
+                ...commonTooltip,
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.raw} 人`,
+                  afterLabel: ctx => {
+                    const i = ctx.dataIndex;
+                    return ` 缺額/精簡: ${rawData.staff.formalBudget[i] - rawData.staff.formalActual[i]} 名`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: { min: 450, max: 620, grid: { color: colors.grid, borderDash: [3, 3] }, ticks: { callback: v => v + ' 人' } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Students / Temp Staff
+      const ctx11 = document.getElementById('chartStudents');
+      if (ctx11) {
+        const c11 = ctx11.getContext('2d');
+        const grad11 = createGradient(c11, 'rgba(4, 120, 87, 0.2)', 'rgba(4, 120, 87, 0.0)');
+        charts.students = new Chart(ctx11, {
+          type: 'line',
+          data: {
+            labels: ['112年度', '113年度', '114年度'],
+            datasets: [
+              {
+                label: '約用研發助理人員',
+                data: rawData.staff.tempStaff,
+                borderColor: '#047857',
+                backgroundColor: grad11,
+                borderWidth: 2.8,
+                pointRadius: 5,
+                pointBackgroundColor: '#047857',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                fill: true,
+                tension: 0.3
+              },
+              {
+                label: '在學學生總數 (人)',
+                data: rawData.students.actual,
+                borderColor: '#0284c7',
+                borderWidth: 2.8,
+                pointRadius: 5,
+                pointBackgroundColor: '#0284c7',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                yAxisID: 'y1',
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: {
+                ...commonTooltip,
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('zh-TW')} 人`
+                }
+              }
+            },
+            scales: {
+              y: {
+                title: { display: true, text: '約用人員數' },
+                grid: { color: colors.grid, borderDash: [3, 3] },
+                ticks: { callback: v => v + ' 人' }
+              },
+              y1: {
+                position: 'right',
+                title: { display: true, text: '學生總人數' },
+                min: 7500,
+                max: 7900,
+                grid: { display: false },
+                ticks: { callback: v => v + ' 人' }
+              },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+    }
+
+    // =========================================================
+    // MASTER FINANCIAL MATRIX TABLE RENDERER
+    // =========================================================
+    function renderTable() {
+      const table = document.getElementById('masterTable');
+      if (!table) return;
+
+      const unit = currentUnit;
+      const unitSuffix = getUnitSuffix(unit);
+      document.getElementById('currentUnitDisplay').textContent = `${unitSuffix} (新臺幣)`;
+
+      document.querySelectorAll('.unit-current-label').forEach(el => {
+        el.textContent = unitSuffix;
+      });
+
+      let html = '';
+
+      if (currentTab === 'compare_all') {
+        html += `
+          <thead>
+            <tr>
+              <th rowspan="2" style="vertical-align: bottom;">會計項目 / 財務指標</th>
+              <th colspan="2" class="num" style="text-align: center; border-bottom: 1px solid var(--border-subtle);">112 年度</th>
+              <th colspan="2" class="num" style="text-align: center; border-bottom: 1px solid var(--border-subtle);">113 年度</th>
+              <th colspan="2" class="num" style="text-align: center; border-bottom: 1px solid var(--border-subtle);">114 年度</th>
+              <th rowspan="2" class="num" style="vertical-align: bottom;">114 決-預差異</th>
+            </tr>
+            <tr>
+              <th class="num">法定預算</th>
+              <th class="num">審定決算</th>
+              <th class="num">法定預算</th>
+              <th class="num">審定決算</th>
+              <th class="num">法定預算</th>
+              <th class="num">審定決算</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-row"><td colspan="8">一、業務收入</td></tr>
+            <tr>
+              <td>　學雜費收入</td>
+              <td class="num">${formatValue(rawData.budget.tuition[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.tuition[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.tuition[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.tuition[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.tuition[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.tuition[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.tuition[2] - rawData.budget.tuition[2], unit)}</td>
+            </tr>
+            <tr>
+              <td>　產學合作收入</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[0], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">${formatValue(rawData.actual.cooperation[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[1], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">${formatValue(rawData.actual.cooperation[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">${formatValue(rawData.actual.cooperation[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">+${formatValue(rawData.actual.cooperation[2] - rawData.budget.cooperation[2], unit)}</td>
+            </tr>
+            <tr>
+              <td>　市府教學研究補助</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.citySubsidy[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.citySubsidy[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.citySubsidy[2], unit)}</td>
+              <td class="num">0.00</td>
+            </tr>
+            <tr>
+              <td>　其他補助與推廣收入</td>
+              <td class="num">${formatValue(rawData.budget.otherSubsidy[0] + rawData.budget.extension[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.otherSubsidy[0] + rawData.actual.extension[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.otherSubsidy[1] + rawData.budget.extension[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.otherSubsidy[1] + rawData.actual.extension[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.otherSubsidy[2] + rawData.budget.extension[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.otherSubsidy[2] + rawData.actual.extension[2], unit)}</td>
+              <td class="num">+${formatValue((rawData.actual.otherSubsidy[2] + rawData.actual.extension[2]) - (rawData.budget.otherSubsidy[2] + rawData.budget.extension[2]), unit)}</td>
+            </tr>
+            <tr class="total-summary-row">
+              <td>業務收入合計</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalRevenue[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalRevenue[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalRevenue[2], unit)}</td>
+              <td class="num">+${formatValue(rawData.actual.totalRevenue[2] - rawData.budget.totalRevenue[2], unit)}</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="8">二、業務成本與費用</td></tr>
+            <tr>
+              <td>　教學研究及訓輔成本</td>
+              <td class="num">${formatValue(rawData.budget.teachingResearch[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.teachingResearch[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.teachingResearch[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.teachingResearch[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.teachingResearch[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.teachingResearch[2], unit)}</td>
+              <td class="num">+${formatValue(rawData.actual.teachingResearch[2] - rawData.budget.teachingResearch[2], unit)}</td>
+            </tr>
+            <tr>
+              <td>　產學合作成本</td>
+              <td class="num">${formatValue(rawData.budget.cooperationCost[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.cooperationCost[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperationCost[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.cooperationCost[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperationCost[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.cooperationCost[2], unit)}</td>
+              <td class="num">+${formatValue(rawData.actual.cooperationCost[2] - rawData.budget.cooperationCost[2], unit)}</td>
+            </tr>
+            <tr>
+              <td>　管理及總務費用</td>
+              <td class="num">${formatValue(rawData.budget.adminGeneral[0], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">${formatValue(rawData.actual.adminGeneral[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.adminGeneral[1], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">${formatValue(rawData.actual.adminGeneral[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.adminGeneral[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">${formatValue(rawData.actual.adminGeneral[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">-${formatValue(rawData.budget.adminGeneral[2] - rawData.actual.adminGeneral[2], unit)}</td>
+            </tr>
+            <tr class="total-summary-row">
+              <td>業務成本合計</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalExpense[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalExpense[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalExpense[2], unit)}</td>
+              <td class="num">+${formatValue(rawData.actual.totalExpense[2] - rawData.budget.totalExpense[2], unit)}</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="8">三、餘絀與重要指標</td></tr>
+            <tr>
+              <td>　業務短絀</td>
+              <td class="num">${formatValue(rawData.budget.opSurplus[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.opSurplus[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.opSurplus[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.opSurplus[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.opSurplus[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.opSurplus[2], unit)}</td>
+              <td class="num">+${formatValue(rawData.actual.opSurplus[2] - rawData.budget.opSurplus[2], unit)}</td>
+            </tr>
+            <tr>
+              <td>　非營業收支淨利益</td>
+              <td class="num">${formatValue(rawData.budget.nonOpSurplus[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.nonOpSurplus[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.nonOpSurplus[1], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.nonOpSurplus[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.nonOpSurplus[2], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.nonOpSurplus[2], unit)}</td>
+              <td class="num">+${formatValue(rawData.actual.nonOpSurplus[2] - rawData.budget.nonOpSurplus[2], unit)}</td>
+            </tr>
+            <tr class="total-summary-row" style="background: rgba(185, 28, 28, 0.08);">
+              <td>本期淨短絀（赤字）</td>
+              <td class="num" style="color: var(--fin-neg); font-weight: 850;">${formatValue(rawData.budget.netSurplus[0], unit)}</td>
+              <td class="num" style="color: var(--fin-neg); font-weight: 850;">${formatValue(rawData.actual.netSurplus[0], unit)}</td>
+              <td class="num" style="color: var(--fin-neg); font-weight: 850;">${formatValue(rawData.budget.netSurplus[1], unit)}</td>
+              <td class="num" style="color: var(--fin-neg); font-weight: 850;">${formatValue(rawData.actual.netSurplus[1], unit)}</td>
+              <td class="num" style="color: var(--fin-neg); font-weight: 850;">${formatValue(rawData.budget.netSurplus[2], unit)}</td>
+              <td class="num" style="color: var(--fin-neg); font-weight: 850;">${formatValue(rawData.actual.netSurplus[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">+${formatValue(rawData.actual.netSurplus[2] - rawData.budget.netSurplus[2], unit)}</td>
+            </tr>
+          </tbody>
+        `;
+      } else if (currentTab === 'budget_trends') {
+        html += `
+          <thead>
+            <tr>
+              <th>法定預算項目</th>
+              <th class="num">112 年度</th>
+              <th class="num">113 年度</th>
+              <th class="num">114 年度</th>
+              <th class="num">115 年度</th>
+              <th class="num">116 預算案</th>
+              <th class="num">五年總增幅 (%)</th>
+              <th class="num">年均複合成長 (CAGR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="total-summary-row">
+              <td>業務收入總預算</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[2], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[3], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[4], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">+49.94%</td>
+              <td class="num" style="color: var(--brand-primary); font-weight: 800;">+10.66%</td>
+            </tr>
+            <tr>
+              <td>　市府教學研究補助</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[2], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[3], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.citySubsidy[4], unit)}</td>
+              <td class="num">+22.16%</td>
+              <td class="num">+5.13%</td>
+            </tr>
+            <tr>
+              <td>　產學建教合作預算</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[2], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[3], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[4], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">+292.85%</td>
+              <td class="num" style="color: var(--brand-primary); font-weight: 800;">+40.79%</td>
+            </tr>
+            <tr>
+              <td>　五項自籌款收入合計</td>
+              <td class="num">${formatValue(rawData.budget.selfGenerated5[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.selfGenerated5[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.selfGenerated5[2], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.selfGenerated5[3], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.selfGenerated5[4], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">+224.98%</td>
+              <td class="num" style="color: var(--brand-primary); font-weight: 800;">+34.28%</td>
+            </tr>
+            <tr>
+              <td>　學雜費收入（凍漲）</td>
+              <td class="num">${formatValue(rawData.budget.tuition[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.tuition[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.tuition[2], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.tuition[3], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.tuition[4], unit)}</td>
+              <td class="num">-0.23%</td>
+              <td class="num">-0.06%</td>
+            </tr>
+            <tr class="total-summary-row">
+              <td>業務成本總預算</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[0], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[1], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[2], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[3], unit)}</td>
+              <td class="num">${formatValue(rawData.budget.totalExpense[4], unit)}</td>
+              <td class="num">+40.62%</td>
+              <td class="num">+8.89%</td>
+            </tr>
+          </tbody>
+        `;
+      } else if (currentTab === 'actual_exec') {
+        html += `
+          <thead>
+            <tr>
+              <th>核心項目</th>
+              <th class="num">112 預算</th>
+              <th class="num">112 決算</th>
+              <th class="num">112 達成率</th>
+              <th class="num">113 決算</th>
+              <th class="num">113 達成率</th>
+              <th class="num">114 決算</th>
+              <th class="num">114 達成率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>業務總收入</td>
+              <td class="num">${formatValue(rawData.budget.totalRevenue[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.totalRevenue[0], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">130.8%</td>
+              <td class="num">${formatValue(rawData.actual.totalRevenue[1], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">125.7%</td>
+              <td class="num">${formatValue(rawData.actual.totalRevenue[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 800;">119.1%</td>
+            </tr>
+            <tr>
+              <td>　建教合作收入</td>
+              <td class="num">${formatValue(rawData.budget.cooperation[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.cooperation[0], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">348.3%</td>
+              <td class="num">${formatValue(rawData.actual.cooperation[1], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">193.1%</td>
+              <td class="num">${formatValue(rawData.actual.cooperation[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">152.5%</td>
+            </tr>
+            <tr>
+              <td>　五項自籌款合計</td>
+              <td class="num">${formatValue(rawData.budget.selfGenerated5[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.selfGenerated5[0], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">287.0%</td>
+              <td class="num">${formatValue(rawData.actual.selfGenerated5[1], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">182.4%</td>
+              <td class="num">${formatValue(rawData.actual.selfGenerated5[2], unit)}</td>
+              <td class="num" style="color: var(--fin-pos); font-weight: 850;">147.9%</td>
+            </tr>
+            <tr>
+              <td>　學雜費收入</td>
+              <td class="num">${formatValue(rawData.budget.tuition[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.tuition[0], unit)}</td>
+              <td class="num">99.7%</td>
+              <td class="num">${formatValue(rawData.actual.tuition[1], unit)}</td>
+              <td class="num">99.1%</td>
+              <td class="num">${formatValue(rawData.actual.tuition[2], unit)}</td>
+              <td class="num">100.1%</td>
+            </tr>
+            <tr>
+              <td>　管理及總務費用 (節流)</td>
+              <td class="num">${formatValue(rawData.budget.adminGeneral[0], unit)}</td>
+              <td class="num">${formatValue(rawData.actual.adminGeneral[0], unit)}</td>
+              <td class="num" style="color: var(--brand-primary); font-weight: 800;">95.2% (省931萬)</td>
+              <td class="num">${formatValue(rawData.actual.adminGeneral[1], unit)}</td>
+              <td class="num" style="color: var(--brand-primary); font-weight: 800;">92.9% (省1450萬)</td>
+              <td class="num">${formatValue(rawData.actual.adminGeneral[2], unit)}</td>
+              <td class="num" style="color: var(--brand-primary); font-weight: 800;">93.3% (省1439萬)</td>
+            </tr>
+          </tbody>
+        `;
+      }
+
+      table.innerHTML = html;
+    }
+
+    function switchYear(tabKey) {
+      currentTab = tabKey;
+      document.querySelectorAll('.matrix-tab-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.matrix-tab-btn')).find(b => b.getAttribute('onclick').includes(tabKey));
+      if (activeBtn) activeBtn.classList.add('active');
+      renderTable();
+    }
+
+    function setUnit(unit) {
+      currentUnit = unit;
+      document.querySelectorAll('.unit-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick').includes(unit));
+      });
+      destroyAllCharts();
+      initCharts();
+      renderTable();
+    }
+
+    // ScrollSpy & Back-to-Top Observer
+    function setupScrollObservers() {
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+
+      const sections = document.querySelectorAll('header.hero-wrap, section.content-chapter');
+      const navLinks = document.querySelectorAll('#desktopNav .nav-chap-link');
+
+      window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 120;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          navLinks.forEach(link => {
+            const href = link.getAttribute('href').replace('#', '');
+            if (href === currentSectionId || (currentSectionId === 'top' && href === 'summary')) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }
+
+    // Initialize on DOM Ready
+    window.addEventListener('DOMContentLoaded', () => {
+      initCharts();
+      renderTable();
+      setupScrollObservers();
+    });
+  </script>
+</body>
+
+</html>
