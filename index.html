@@ -333,7 +333,7 @@
       flex-shrink: 0;
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1280px) {
       .nav-chapters-bar {
         display: none;
       }
@@ -1110,6 +1110,416 @@
       transform: translateY(-2px);
       color: var(--brand-primary);
     }
+
+    /* =========================================================
+       ULTRA-RESPONSIVE ADAPTATIONS (300px - 580px VIEWPORTS)
+       Guarantees zero overflow, fluid typography, and premium UX
+       across all devices from 300px to 500px+.
+       ========================================================= */
+
+    @media (max-width: 580px) {
+
+      html,
+      body {
+        /*overflow-x: hidden !important;*/
+        width: 100% !important;
+        max-width: 100vw !important;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      img,
+      svg {
+        max-width: 100%;
+      }
+
+      .clean-table-scroll {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--border-subtle);
+      }
+
+      .clean-table {
+        min-width: 320px;
+        width: 100%;
+      }
+
+      .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+
+      /* 1. Navbar Compact Fit for 300px+ */
+      .nav-container {
+        height: 52px !important;
+        gap: 6px !important;
+      }
+
+      .nav-brand {
+        gap: 6px !important;
+      }
+
+      .nav-brand-logo {
+        height: 28px !important;
+        width: auto !important;
+      }
+
+      .nav-brand-title {
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+      }
+
+      .nav-brand-sub {
+        display: none !important;
+      }
+
+      .nav-controls {
+        gap: 4px !important;
+      }
+
+      .unit-pill-group {
+        padding: 2px !important;
+      }
+
+      .unit-pill-btn {
+        padding: 3px 6px !important;
+        font-size: 0.68rem !important;
+      }
+
+      .theme-icon-btn,
+      .mobile-menu-btn {
+        width: 30px !important;
+        height: 30px !important;
+      }
+
+      .theme-icon-btn svg,
+      .mobile-menu-btn svg {
+        width: 14px !important;
+        height: 14px !important;
+      }
+
+      .mobile-nav-drawer {
+        top: 53px !important;
+        padding: 12px 14px !important;
+        gap: 4px !important;
+      }
+
+      .mobile-nav-drawer a {
+        padding: 8px 10px !important;
+        font-size: 0.84rem !important;
+      }
+
+      /* 2. Hero Section */
+      .hero-wrap {
+        padding: 28px 0 20px !important;
+      }
+
+      .hero-meta-badge {
+        font-size: 0.68rem !important;
+        padding: 4px 8px !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+      }
+
+      .hero-headline {
+        font-size: clamp(1.35rem, 6.2vw, 1.8rem) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+        word-break: break-word !important;
+      }
+
+      .hero-lead-text {
+        font-size: 0.86rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+      }
+
+      /* Governance Timeline */
+      .governance-timeline-bar {
+        grid-template-columns: 1fr !important;
+        padding: 14px 12px !important;
+        gap: 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .timeline-step-badge {
+        font-size: 0.66rem !important;
+      }
+
+      .timeline-step-title {
+        font-size: 0.86rem !important;
+        margin: 3px 0 !important;
+      }
+
+      .timeline-step-desc {
+        font-size: 0.74rem !important;
+        line-height: 1.45 !important;
+      }
+
+      /* Key Metric Cards */
+      .metrics-dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .metric-card {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+
+      .metric-card-header {
+        font-size: 0.7rem !important;
+      }
+
+      .metric-card-value {
+        font-size: 1.55rem !important;
+      }
+
+      .metric-badge-delta {
+        font-size: 0.68rem !important;
+        padding: 2px 7px !important;
+        margin-top: 6px !important;
+      }
+
+      .metric-card-footer {
+        font-size: 0.66rem !important;
+        margin-top: 6px !important;
+      }
+
+      /* 3. Chapters & Headers */
+      .content-chapter {
+        padding: 32px 0 !important;
+      }
+
+      .chapter-heading-wrap {
+        margin-bottom: 16px !important;
+      }
+
+      .chapter-eyebrow {
+        font-size: 0.68rem !important;
+        margin-bottom: 6px !important;
+      }
+
+      .chapter-title {
+        font-size: clamp(1.25rem, 5.5vw, 1.55rem) !important;
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+      }
+
+      .chapter-intro {
+        font-size: 0.84rem !important;
+        line-height: 1.6 !important;
+      }
+
+      /* 4. Cards & Panels */
+      .card-panel {
+        padding: 14px 12px !important;
+        border-radius: 14px !important;
+      }
+
+      .card-panel-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .card-panel-title {
+        font-size: 0.92rem !important;
+        line-height: 1.3 !important;
+      }
+
+      .card-panel-sub {
+        font-size: 0.72rem !important;
+      }
+
+      .card-tag {
+        font-size: 0.68rem !important;
+        padding: 2px 8px !important;
+      }
+
+      .canvas-container {
+        height: 220px !important;
+      }
+
+      .canvas-tall {
+        height: 250px !important;
+      }
+
+      .card-panel-footer {
+        font-size: 0.66rem !important;
+        margin-top: 10px !important;
+        padding-top: 8px !important;
+        gap: 4px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      /* CapEx Specs */
+      .project-stats-strip {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding: 12px !important;
+        border-radius: 10px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .project-stat-label {
+        font-size: 0.66rem !important;
+      }
+
+      .project-stat-val {
+        font-size: 0.88rem !important;
+      }
+
+      /* 5. Matrix Toolbar & Tabs */
+      .master-toolbar-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .matrix-tab-bar {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        border-radius: 8px !important;
+        padding: 2px !important;
+      }
+
+      .matrix-tab-bar::-webkit-scrollbar {
+        display: none !important;
+      }
+
+      .matrix-tab-btn {
+        padding: 4px 8px !important;
+        font-size: 0.7rem !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
+
+      .master-ledger-table th,
+      .master-ledger-table td {
+        padding: 8px 10px !important;
+        font-size: 0.74rem !important;
+      }
+
+      /* 6. Strategic Quadrant */
+      .strategic-grid-4 {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      .strategic-card {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+
+      .strategic-title {
+        font-size: 0.92rem !important;
+      }
+
+      .strategic-desc {
+        font-size: 0.8rem !important;
+        line-height: 1.55 !important;
+      }
+
+      /* 7. Footer */
+      .site-footer {
+        padding: 32px 0 20px !important;
+        margin-top: 32px !important;
+      }
+
+      .footer-top-grid {
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .footer-brand-lockup {
+        gap: 10px !important;
+      }
+
+      .footer-seal {
+        height: 34px !important;
+      }
+
+      .footer-brand-title {
+        font-size: 0.92rem !important;
+      }
+
+      .footer-brand-desc,
+      .footer-meta-block {
+        font-size: 0.74rem !important;
+        line-height: 1.5 !important;
+      }
+
+      .footer-bottom-bar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        font-size: 0.74rem !important;
+      }
+
+      .back-to-top-btn {
+        bottom: 14px !important;
+        right: 14px !important;
+        width: 36px !important;
+        height: 36px !important;
+      }
+    }
+
+    /* Small Phones & Fold Covers (<= 360px down to 300px) */
+    @media (max-width: 360px) {
+      .container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+
+      .nav-container {
+        gap: 4px !important;
+      }
+
+      .nav-brand-title {
+        font-size: 0.78rem !important;
+      }
+
+      .nav-brand-logo {
+        height: 24px !important;
+      }
+
+      .unit-pill-btn {
+        padding: 2px 4px !important;
+        font-size: 0.62rem !important;
+      }
+
+      .theme-icon-btn,
+      .mobile-menu-btn {
+        width: 26px !important;
+        height: 26px !important;
+      }
+
+      .hero-headline {
+        font-size: 1.25rem !important;
+      }
+
+      .metric-card-value {
+        font-size: 1.4rem !important;
+      }
+    }
   </style>
 </head>
 
@@ -1426,42 +1836,44 @@
             </div>
           </div>
 
-          <table class="clean-table">
-            <thead>
-              <tr>
-                <th>項目</th>
-                <th class="num">112 年度</th>
-                <th class="num">113 年度</th>
-                <th class="num">114 年度</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>業務收入差額 (決-預)</td>
-                <td class="num num-positive">+412,479</td>
-                <td class="num num-positive">+401,607</td>
-                <td class="num num-positive">+321,991</td>
-              </tr>
-              <tr>
-                <td>業務成本差額 (決-預)</td>
-                <td class="num">+336,069</td>
-                <td class="num">+297,638</td>
-                <td class="num">+228,788</td>
-              </tr>
-              <tr>
-                <td>管總行政節約 (預-決)</td>
-                <td class="num num-saved">-9,310</td>
-                <td class="num num-saved">-14,502</td>
-                <td class="num num-saved">-14,390</td>
-              </tr>
-              <tr style="background: var(--bg-subtle);">
-                <td><strong>短絀改善度 (決少虧)</strong></td>
-                <td class="num num-positive"><strong>+83,627</strong></td>
-                <td class="num num-positive"><strong>+99,729</strong></td>
-                <td class="num num-positive"><strong>+109,251</strong></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="clean-table-scroll">
+            <table class="clean-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th class="num">112 年度</th>
+                  <th class="num">113 年度</th>
+                  <th class="num">114 年度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>業務收入差額 (決-預)</td>
+                  <td class="num num-positive">+412,479</td>
+                  <td class="num num-positive">+401,607</td>
+                  <td class="num num-positive">+321,991</td>
+                </tr>
+                <tr>
+                  <td>業務成本差額 (決-預)</td>
+                  <td class="num">+336,069</td>
+                  <td class="num">+297,638</td>
+                  <td class="num">+228,788</td>
+                </tr>
+                <tr>
+                  <td>管總行政節約 (預-決)</td>
+                  <td class="num num-saved">-9,310</td>
+                  <td class="num num-saved">-14,502</td>
+                  <td class="num num-saved">-14,390</td>
+                </tr>
+                <tr style="background: var(--bg-subtle);">
+                  <td><strong>短絀改善度 (決少虧)</strong></td>
+                  <td class="num num-positive"><strong>+83,627</strong></td>
+                  <td class="num num-positive"><strong>+99,729</strong></td>
+                  <td class="num num-positive"><strong>+109,251</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div style="margin-top: 18px;">
             <div class="narrative-title">機制解構：科研創收與管理費提撥</div>
