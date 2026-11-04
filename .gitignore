@@ -1,0 +1,51 @@
+# =========================================================
+# Git Ignore Configuration
+# Project: Utaipei-Budget-DataMining (BlueBoy247)
+# =========================================================
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Large Compressed Archives & Package Dumps
+*.rar
+*.zip
+*.7z
+*.tar
+*.gz
+*.tar.gz
+
+# Operating System Metadata & Cache
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Temporary & Log Files
+*.log
+*.tmp
+*.temp
+
